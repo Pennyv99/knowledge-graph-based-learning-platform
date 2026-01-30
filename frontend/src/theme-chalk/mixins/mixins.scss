@@ -1,0 +1,53 @@
+@use "config" as *;
+@use "../common/var.scss" as *;
+@forward "config"; //
+@forward "../common/var.scss";
+
+@mixin b($block) {
+  $B: $namespace + "-" + $block;
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separator + $element} {
+      @content;
+    }
+  }
+}
+
+@mixin button-color-varient($font-color, $background-color, $border-color) {
+  color: $font-color;
+  background-color: $background-color;
+  border-color: $border-color;
+}
+
+@mixin button-loading-disabled {
+  &,
+  &.hover,
+  &.focus {
+    cursor: not-allowed;
+    filter: brightness(1.35) saturate(0.95) grayscale(0.1);
+    color: rgb(192, 192, 192);
+  }
+}
+
+

@@ -1,0 +1,105 @@
+@use '../mixins/mixins.scss' as *;
+
+@include b(main) {
+    // width: auto;
+    height: 600px;
+    padding-top: 75px;
+
+    @include e(content-wrapper) {
+        width: $content-width;
+        min-width: $content-min-width;
+        // display: flex;
+        // flex-direction: column;
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    // @include when(login) {
+    //     transform: translateY(-500px);
+    // }
+
+    @include e(title) {
+        font-size: 70px;
+        font-weight: bold;
+        // height: 220px;
+
+        padding-left: 20px;
+        padding-top: 150px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        font-family: 'Courier New', Courier, monospace;
+
+        & span {
+            transition: all 0.4s;
+        }
+        & span:hover {
+            font-size: 80px;
+            transition: 0.4s;
+        }
+    }
+
+    @include e(sub-title) {
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: large;
+
+        font-family: Courier, monospace;
+
+        & img {
+            position: relative;
+            top: 20px;
+            left: -20px;
+        }
+    }
+
+    @include e(desc) {
+        font-size: 36px;
+        color: $color-main;
+
+        padding-left: 10px;
+    }
+
+    @include e(button-group) {
+        padding: 30px 0;
+        display: flex;
+    }
+
+    @include e(image-wrapper) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+
+        width: 100%;
+        height: 800px;
+        background-image: url('@/assets/pics/ship2.png');
+        background-size: cover;
+    }
+
+    @include e(kg) {
+        // background-color: antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+    }
+
+    @include e(qa) {
+        // background-color: rgb(69, 206, 89);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+    }
+
+    @include e(path) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+    }
+}

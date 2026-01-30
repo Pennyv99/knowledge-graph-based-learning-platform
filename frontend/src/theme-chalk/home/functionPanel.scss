@@ -1,0 +1,161 @@
+@use '../mixins/mixins.scss' as *;
+
+$button-size: 60px;
+
+@include b(function-panel) {
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include e(button-wrapper) {
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    @include e(function-button) {
+        width: $button-size;
+        height: $button-size;
+        box-sizing: border-box;
+
+        padding: 10px;
+
+        color: $color-main;
+        background-color: white;
+
+        border: 2px solid rgb(213, 213, 213);
+        &:first-child {
+            border-radius: 10px 0 0 10px;
+            border-right: none;
+        }
+
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+            border-left: none;
+        }
+
+        transition: 0.4s;
+        &:hover {
+            background-color: $color-main;
+            color: white;
+            cursor: pointer;
+            width: calc($button-size + 10px);
+            height: calc($button-size + 10px);
+
+            transition: 0.4s;
+        }
+
+        &:active {
+            background-color: $color-main-active;
+            color: white;
+            width: calc($button-size + 10px);
+            height: calc($button-size + 10px);
+        }
+
+        @include when(active) {
+            background-color: $color-main;
+            color: white;
+            width: calc($button-size + 10px);
+            height: calc($button-size + 10px);
+            transition: 0.4s;
+        }
+    }
+
+    @include e(panel-item) {
+        // flex-grow: 1;
+        padding: 20px;
+
+        // font-size: 15px;
+        // font-weight: bold;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+    }
+
+    @include e(function-wrapper) {
+        margin-top: 10px;
+        width: 80%;
+        height: 80%;
+        background-color: $color-main;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        overflow: scroll;
+    }
+}
+
+@include b(courses) {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+
+    @include e(selection-item) {
+        width: 100%;
+        min-height: 50px;
+        border-radius: 5px;
+        background-color: $color-main-active;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 18px;
+
+
+        &:hover {
+            background-color: #eee;;
+        }
+
+        margin-bottom: 15px;
+
+        cursor: pointer;
+    }
+}
+
+@include b(details) {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;
+
+    @include e(detail-wrapper) {
+        height: 40px;
+
+        font-size: 16px;
+        color: $color-main-active;
+    }
+
+    @include e(label) {
+        font-weight: bold;
+        color: $color-main-active;
+    }
+}
+
+@include b(operations) {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

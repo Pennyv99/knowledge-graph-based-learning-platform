@@ -1,0 +1,114 @@
+@use '../mixins/mixins.scss' as *;
+
+@include b(nav) {
+    // width: auto;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2;
+    height: 75px;
+    width: 100%;
+    border-bottom: 1px silver solid;
+    display: flex;
+
+
+    box-shadow: 0 0 20px gray;
+    background-color: white;
+
+    @include e(wrapper) {
+        width: $content-width;
+        min-width: $content-min-width;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    
+    @include e(icon-group) {
+        // width: 180px;
+        font-size: 24px;
+        font-style: italic;
+
+        cursor: pointer;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    @include e(icon) {
+        width: 40px;
+        height: 40px;
+        padding: 0 15px;
+    }
+
+    @include e(lang-select-wrapper) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 30px;
+    }
+
+    @include e(lang-select) {
+        width: 24px;
+        height: 24px;
+        transition: 0.3s;
+
+        &:hover {
+            color: rgb(167, 192, 213);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+    }
+
+    @include e(lang-select-items-wrapper) {
+        width: 30px;
+
+        display: flex;
+        flex-direction: column;
+        transition: 0.4s;
+    }
+
+    @include e(lang-select-item) {
+        height: 30px;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: gray;
+        transition: 0.2s;
+
+        @include when(active) {
+            fill: $color-main;
+            transition: 0.2s;
+        }
+    }
+
+    @include e(items-group) {
+        display: flex;
+    }
+
+    @include e(item) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        margin: 0 10px;
+
+        font-size: 14px;
+        font-weight: bold;
+
+        color: $color-main;
+        transition: 0.4s ease;
+
+        &:hover,
+        &:active {
+            transition: 0.4s ease;
+            color: $color-white;
+            background-color: $color-main;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

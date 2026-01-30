@@ -1,0 +1,68 @@
+@use '../mixins/mixins.scss' as *;
+
+
+$item-width: 180px;
+$item-active-width: 220px;
+$item-font-size: 24px;
+$item-height: 60px;
+$item-height-hover: 80px;
+$item-hover-bacc: rgb(243, 243, 243);
+$item-active-bacc: $color-white;
+
+@include b(sidebar) {
+    position: relative;
+    z-index: 1;
+
+    padding-top: 75px;
+    width: $item-width;
+    flex-shrink: 0;
+
+    background-color: $color-main;
+    
+    @include e('icon-panel-wrapper'){
+        padding: 30px 0;
+    }
+
+    @include e('item-group') {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include e('item'){
+
+        flex: auto;
+        height: $item-height;
+
+        width: $item-width;
+
+        font-size: $item-font-size;
+        font-weight: bold;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: .4s;
+        &:hover {
+            color: $color-main;
+            background-color: $item-hover-bacc;
+            cursor: pointer;
+            height: $item-height-hover;
+            width: $item-active-width;
+
+            transition: .4s;
+        }
+
+        @include when(active) {
+            color: $color-main;
+            background-color: $color-main-active;
+            cursor: pointer;
+            height: $item-height-hover;
+            width: $item-active-width;
+
+            transition: .4s;
+        }
+        
+    }
+}

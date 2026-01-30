@@ -1,0 +1,21 @@
+@use '../mixins/mixins.scss' as *;
+
+@include b(icon-panel) {
+    font-size: 24px;
+    font-style: italic;
+    background-color: $color-white;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include e(icon) {
+        width: 40px;
+        height: 40px;
+        padding: 0 15px;
+    }
+}
+
+

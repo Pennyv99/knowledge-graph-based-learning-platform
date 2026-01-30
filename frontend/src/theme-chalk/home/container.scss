@@ -1,0 +1,14 @@
+@use '../mixins/mixins.scss' as *;
+
+@include b(container){
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    box-sizing: border-box;
+
+    @include when(left-right) {
+        flex-direction: row;
+        
+    }
+}
+
