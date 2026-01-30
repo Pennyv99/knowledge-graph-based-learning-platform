@@ -43,16 +43,16 @@ Models: ChatGLM, KP-GLM
 
 ## Frontend Preview
 **Guide**
-![Guide](frontend/screenshots/guide.png)
+![Guide](frontend/screenshot/guide.png)
 
 **Graph Visualization View**
-![Graph View](frontend/screenshots/graph_view.png)
+![Graph View](frontend/screenshot/graph_view.png)
 
 **Course Search Panel**
-![Search Panel](frontend/screenshots/search_panel.png)
+![Search Panel](frontend/screenshot/search_panel.png)
 
 **Learning Path Recommendation**
-![Learning Path](frontend/screenshots/path_recommendation.png)
-![Learning Path](frontend/screenshots/path_recommendation2.png)
+![Learning Path](frontend/screenshot/path_recommendation.png)
+![Learning Path](frontend/screenshot/path_recommendation2.png)
 ## License
 For academic and research use.
